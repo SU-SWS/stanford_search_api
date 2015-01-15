@@ -1,0 +1,14 @@
+name = Stanford Search API
+description = Core module for setup and configuration of the Search API suite of modules.
+core = 7.x
+package = Stanford
+version = 7.x-1.0
+project = stanford_search_api
+dependencies[] = search_api
+dependencies[] = search_api_autocomplete
+dependencies[] = search_api_stats
+dependencies[] = search_api_facetapi
+dependencies[] = search_api_views
+dependencies[] = facetapi
+dependencies[] = views
+project status url = https://github.com/SU-SWS/stanford_search_api
