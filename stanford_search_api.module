@@ -3,3 +3,72 @@
  * @file
  * Search API Configuration Module Base.
  */
+
+/**
+ * Implements hook_block_info().
+ */
+function stanford_search_api_block_info() {
+
+  /**
+   * Default search block.
+   */
+  $blocks['search_api_search_block'] = array(
+    'info' => t('Search Block'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function stanford_search_api_block_view($delta = '') {
+  $block = array();
+
+  switch ($delta) {
+    case 'search_api_search_block':
+      $block['subject'] = t('Search this site');
+      $block['content'] = drupal_get_form('stanford_search_api_search_block_form');
+      break;
+
+  }
+  return $block;
+}
+
+/**
+ * Single fulltext search patch through block for the search sub modules.
+ * @param  [type] $form       [description]
+ * @param  [type] $form_state [description]
+ * @return [type]             [description]
+ */
+function stanford_search_api_search_block_form($form, $form_state) {
+
+  $form['keywords'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Search this site"),
+    '#default_value' => isset($_REQUEST['search_api_views_fulltext']) ? check_plain($_REQUEST["search_api_views_fulltext"]) : "",
+  );
+
+  $form['search'] = array(
+    '#type' => 'submit',
+    '#value' => t('Search'),
+  );
+
+  return $form;
+}
+
+/**
+ * Full text submit redirect.
+ * @param  [type] $form       [description]
+ * @param  [type] $form_state [description]
+ * @return [type]             [description]
+ */
+function stanford_search_api_search_block_form_submit($form, $form_state) {
+  $values = $form_state['values'];
+
+  if (isset($values['keywords'])) {
+    drupal_goto('search/content', array('query' => array("search_api_views_fulltext" => check_plain($values['keywords']))));
+  }
+
+}

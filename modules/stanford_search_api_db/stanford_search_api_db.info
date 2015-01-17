@@ -5,4 +5,5 @@ package = Stanford
 version = 7.x-1.0
 project = stanford_search_api_db
 dependencies[] = stanford_search_api
-dependencies[] = search_api_search_db
+dependencies[] = search_api_db
+dependencies[] = facetapi
