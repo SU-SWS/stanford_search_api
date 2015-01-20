@@ -29,13 +29,13 @@ function stanford_search_api_db_facet_context_context_default_contexts() {
         'facetapi-SPQQU6tD1IoqvO2yXTgzRfRH65T1OfN7' => array(
           'module' => 'facetapi',
           'delta' => 'SPQQU6tD1IoqvO2yXTgzRfRH65T1OfN7',
-          'region' => 'sidebar_first',
+          'region' => 'sidebar_second',
           'weight' => '-10',
         ),
         'facetapi-LIXsZqdtKYz1TuYBcl5Uh0jsBG7KIOPL' => array(
           'module' => 'facetapi',
           'delta' => 'LIXsZqdtKYz1TuYBcl5Uh0jsBG7KIOPL',
-          'region' => 'sidebar_first',
+          'region' => 'sidebar_second',
           'weight' => '-9',
         ),
       ),

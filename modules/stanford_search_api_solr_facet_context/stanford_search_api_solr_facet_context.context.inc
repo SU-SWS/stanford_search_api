@@ -29,13 +29,13 @@ function stanford_search_api_solr_facet_context_context_default_contexts() {
         'facetapi-KTKqAhH8zkkDCMWAf1Yi3zoMRr8WPfhq' => array(
           'module' => 'facetapi',
           'delta' => 'KTKqAhH8zkkDCMWAf1Yi3zoMRr8WPfhq',
-          'region' => 'sidebar_first',
+          'region' => 'sidebar_second',
           'weight' => '-10',
         ),
         'facetapi-0jT33lTbH1jmTzk52H3GRWVN0ZHZWvQ2' => array(
           'module' => 'facetapi',
           'delta' => '0jT33lTbH1jmTzk52H3GRWVN0ZHZWvQ2',
-          'region' => 'sidebar_first',
+          'region' => 'sidebar_second',
           'weight' => '-9',
         ),
       ),
