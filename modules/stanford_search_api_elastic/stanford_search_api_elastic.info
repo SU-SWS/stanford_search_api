@@ -1,7 +1,7 @@
 name = Stanford Search API Elasticsearch
 description = Configuration module for using Search API with an external Elasticsearch host
 core = 7.x
-package = Stanford
+package = Stanford Search API
 version = 7.x-1.0
 project = stanford_search_api_elastic
 dependencies[] = stanford_search_api

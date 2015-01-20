@@ -1,0 +1,25 @@
+div.search-content ul {
+  margin: 0;
+  padding: 0;
+}
+.search-content li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+}
+.search-views-left {
+  display: inline-block;
+  width: 85%;
+  vertical-align: top;
+}
+.search-views-right {
+  display: inline-block;
+  width: 14%;
+  vertical-align: top;
+  text-align: right;
+  margin-top: 1.8em;
+}
+.search-excerpt {
+  display: block;
+}

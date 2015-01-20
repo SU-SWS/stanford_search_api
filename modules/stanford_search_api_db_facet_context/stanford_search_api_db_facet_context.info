@@ -1,0 +1,12 @@
+name = Stanford Search API DB Facet Context
+description = Places facets on the search api views pages using context
+core = 7.x
+package = Stanford Search API
+version = 7.x-1.0
+project = stanford_search_api_db_facet_context
+dependencies[] = context
+dependencies[] = ctools
+dependencies[] = facetapi
+features[context][] = stanford_search_api_facet
+features[ctools][] = context:context:3
+features[features_api][] = api:2
