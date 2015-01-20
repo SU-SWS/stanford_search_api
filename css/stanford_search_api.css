@@ -23,3 +23,9 @@ div.search-content ul {
 .search-excerpt {
   display: block;
 }
+.excerpt-highlight {
+  font-weight: bold;
+  background-color: #DD0;
+  padding-right: 3px;
+  padding-left: 3px;
+}

@@ -13,6 +13,33 @@ function stanford_search_api_db_install() {
  * Implements hook_enable().
  */
 function stanford_search_api_db_enable() {
+
+  $anon = user_role_load_by_name("anonymous user");
+  $auth = user_role_load_by_name("authenticated user");
+  $perm = "use search_api_autocomplete for search_api_views_search_db_nodes";
+
+  // We cannot use this api function as the permission does not
+  // yet exist due to cache and hooks.
+  // user_role_grant_permissions($anon->rid, $perms);
+  // user_role_grant_permissions($auth->rid, $perms);
+
+  // Add anonymous users.
+  db_merge('role_permission')->key(array(
+    'rid' => $anon->rid,
+    'permission' => $perm,
+  ))->fields(array(
+    'module' => "search_api_autocomplete",
+  ))->execute();
+
+  // Add authenticated users.
+  db_merge('role_permission')->key(array(
+    'rid' => $auth->rid,
+    'permission' => $perm,
+  ))->fields(array(
+    'module' => "search_api_autocomplete",
+  ))->execute();
+
+
 }
 
 /**
