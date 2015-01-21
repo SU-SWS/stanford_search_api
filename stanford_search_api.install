@@ -14,20 +14,21 @@ function stanford_search_api_install() {
     module_disable(array('search'), TRUE);
   }
 
-  // Remove the default index.
-  $default = search_api_index_load_multiple(FALSE, array('machine_name' => 'default_node_index'));
-  if (!empty($default)) {
-    db_delete("search_api_index")
-    ->condition('machine_name', "default_node_index")
-    ->execute();
-  }
-
 }
 
 /**
  * Implements hook_enable().
  */
 function stanford_search_api_enable() {
+
+  // Remove the default index.
+  //  $default = search_api_index_load_multiple(FALSE, array('machine_name' => 'default_node_index'));
+  //  if (!empty($default)) {
+  //    db_delete("search_api_index")
+  //      ->condition('machine_name', "default_node_index")
+  //      ->execute();
+  //  }
+
 }
 
 /**

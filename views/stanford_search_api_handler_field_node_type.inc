@@ -55,6 +55,10 @@ class stanford_search_api_handler_field_node_type extends entity_views_handler_f
 
     // Change the link to a facet.
     if ($options['link_as_facet']) {
+      if (!empty($options['format_name'])) {
+        $names = node_type_get_names();
+        $value = $names[$value];
+      }
       $output = l($value, "search/content", array("query" => $query));
     }
     else {

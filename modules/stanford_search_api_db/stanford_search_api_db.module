@@ -146,7 +146,7 @@ function stanford_search_api_db_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "index_directly" : 1,
-      "cron_limit" : "0",
+      "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "author:name" : { "type" : "text" },
