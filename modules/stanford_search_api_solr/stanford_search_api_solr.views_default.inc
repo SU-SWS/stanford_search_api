@@ -19,8 +19,8 @@ function stanford_search_api_solr_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Search SOLR Nodes';
-  $handler->display->display_options['css_class'] = 'search-content';
+  $handler->display->display_options['title'] = 'Search';
+  $handler->display->display_options['css_class'] = 'search-content views-row-lines';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'search_api_views_cache';

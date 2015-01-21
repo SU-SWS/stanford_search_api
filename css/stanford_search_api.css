@@ -2,10 +2,9 @@ div.search-content ul {
   margin: 0;
   padding: 0;
 }
-.search-content li {
+.content .search-content ul li {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
+  margin-left: 0;
   text-indent: 0;
 }
 .search-views-left {
@@ -19,6 +18,9 @@ div.search-content ul {
   vertical-align: top;
   text-align: right;
   margin-top: 1.8em;
+}
+.search-views-bottom {
+  padding-top: .5em;
 }
 .search-excerpt {
   display: block;

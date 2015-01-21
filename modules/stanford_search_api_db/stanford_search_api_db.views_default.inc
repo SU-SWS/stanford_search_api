@@ -8,9 +8,9 @@ function stanford_search_api_db_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->tag = 'default';
   $view->name = 'search_db_nodes';
   $view->description = 'Search API Search DB Nodes Search Page';
+  $view->tag = 'default';
   $view->base_table = 'search_api_index_nodes_now';
   $view->human_name = 'Search DB Nodes';
   $view->core = 7;
@@ -19,8 +19,8 @@ function stanford_search_api_db_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Search DB Nodes';
-  $handler->display->display_options['css_class'] = 'search-content';
+  $handler->display->display_options['title'] = 'Search';
+  $handler->display->display_options['css_class'] = 'search-content views-row-lines';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'search_api_views_cache';
@@ -48,12 +48,12 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['empty']['area']['label'] = 'No search results';
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = '<h2>Your search did not yield any results</h2>
-      <ul>
-      <li>Check if your spelling is correct.</li>
-      <li>Simplify your search by using fewer words.</li>
-      <li>Remove quotes around phrases to match each word individually: "stanford university" will match less than stanford university.</li>
-      <li>Consider loosening your query with OR: stanford university will match less than stanford OR university.</li>
-      </ul>';
+        <ul>
+        <li>Check if your spelling is correct.</li>
+        <li>Simplify your search by using fewer words.</li>
+        <li>Remove quotes around phrases to match each word individually: "stanford university" will match less than stanford university.</li>
+        <li>Consider loosening your query with OR: stanford university will match less than stanford OR university.</li>
+        </ul>';
   $handler->display->display_options['empty']['area']['format'] = 'full_html';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -77,6 +77,8 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['fields']['field_tags']['table'] = 'search_api_index_nodes_now';
   $handler->display->display_options['fields']['field_tags']['field'] = 'field_tags';
   $handler->display->display_options['fields']['field_tags']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_tags']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_tags']['alter']['text'] = 'tagged with: [field_tags]';
   $handler->display->display_options['fields']['field_tags']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tags']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_tags']['view_mode'] = 'full';
@@ -107,15 +109,15 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="search-views-left">
-    <h2>[title]</h2> [edit_node]
-    <span class="search-excerpt">[search_api_excerpt]</span>
-    </div>
-    <div class="search-views-right">
-    <span class="search-content-type">[type]</span>
-    </div>
-    <div class="search-views-bottom">
-    [field_tags]
-    </div>';
+      <h2>[title]</h2> [edit_node]
+      <span class="search-excerpt">[search_api_excerpt]</span>
+      </div>
+      <div class="search-views-right">
+      <span class="search-content-type">[type]</span>
+      </div>
+      <div class="search-views-bottom">
+      [field_tags]
+      </div>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Search: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
