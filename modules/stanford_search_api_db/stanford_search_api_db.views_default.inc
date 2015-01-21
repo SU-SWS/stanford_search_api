@@ -79,6 +79,7 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['fields']['field_tags']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_tags']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_tags']['alter']['text'] = 'tagged with: [field_tags]';
+  $handler->display->display_options['fields']['field_tags']['element_class'] = 'btn';
   $handler->display->display_options['fields']['field_tags']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_tags']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_tags']['view_mode'] = 'full';
@@ -90,6 +91,7 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_class'] = 'btn';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['type']['format_name'] = 1;
@@ -108,7 +110,7 @@ function stanford_search_api_db_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="search-views-left">
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '    <div class="search-views-left">
       <h2>[title]</h2> [edit_node]
       <span class="search-excerpt">[search_api_excerpt]</span>
       </div>

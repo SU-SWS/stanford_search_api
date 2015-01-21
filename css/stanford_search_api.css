@@ -9,12 +9,12 @@ div.search-content ul {
 }
 .search-views-left {
   display: inline-block;
-  width: 85%;
+  width: 80%;
   vertical-align: top;
 }
 .search-views-right {
   display: inline-block;
-  width: 14%;
+  width: 19%;
   vertical-align: top;
   text-align: right;
   margin-top: 1.8em;

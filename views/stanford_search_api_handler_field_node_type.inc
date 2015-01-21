@@ -59,7 +59,7 @@ class stanford_search_api_handler_field_node_type extends entity_views_handler_f
         $names = node_type_get_names();
         $value = $names[$value];
       }
-      $output = l($value, "search/content", array("query" => $query));
+      $output = l($value, "search/content", array("query" => $query, "attributes" => array('class' => array($options['element_class']))));
     }
     else {
       $output = parent::render($values);
