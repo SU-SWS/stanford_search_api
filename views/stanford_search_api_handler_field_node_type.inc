@@ -42,16 +42,17 @@ class stanford_search_api_handler_field_node_type extends entity_views_handler_f
 
     // Add the search request back.
     // $query = array("search_api_views_fulltext" => check_plain($_REQUEST['search_api_views_fulltext']));
-    $query = $_REQUEST;
+    $query = $_GET;
+    unset($query['q']);
 
     // Check for the facets.
-    if (!isset($query['f']) || !is_array($query['f'])) {
-      $query['f'][] = "type:" . $values->_entity_properties['type'];
-    }
-    else {
-      // Look for the type facet.
+    if (isset($query['f']) && is_array($query['f'])) {
+      // Look for a type facet that already exists and remove it.
       array_walk($query['f'], "stanford_search_api_find_facet_type_index", $values->_entity_properties['type']);
     }
+
+    // Add the type in.
+    $query['f'][] = "type:" . $values->_entity_properties['type'];
 
     // Change the link to a facet.
     if ($options['link_as_facet']) {

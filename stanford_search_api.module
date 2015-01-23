@@ -87,7 +87,8 @@ function stanford_search_api_views_api() {
  * @return [type] [description]
  */
 function stanford_search_api_find_facet_type_index(&$item, $key, $type) {
-  if (strpos($item, "type:") == 0) {
-    $item = "type:" . $type;
+  if (strpos($item, "type:") === 0) {
+    // $item = "type:" . $type;
+    unset($item);
   }
 }
