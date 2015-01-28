@@ -54,7 +54,13 @@ class stanford_search_api_handler_field_entity extends entity_views_handler_fiel
       $query = $_GET;
       unset($query['q']);
 
-      $query['f'][] = $this->real_field . ":" . $entity->tid;
+      // Check for the facets.
+      $query['f'] = isset($query['f']) ? $query['f'] : array();
+
+      // Add the type in.
+      if (!in_array($this->real_field . ":" . $entity->tid, $query['f'])) {
+        $query['f'][] = $this->real_field . ":" . $entity->tid;
+      }
 
       return l($render, "search/content", array(
         'html' => TRUE,

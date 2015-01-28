@@ -46,13 +46,12 @@ class stanford_search_api_handler_field_node_type extends entity_views_handler_f
     unset($query['q']);
 
     // Check for the facets.
-    if (isset($query['f']) && is_array($query['f'])) {
-      // Look for a type facet that already exists and remove it.
-      array_walk($query['f'], "stanford_search_api_find_facet_type_index", $values->_entity_properties['type']);
-    }
+    $query['f'] = isset($query['f']) ? $query['f'] : array();
 
     // Add the type in.
-    $query['f'][] = "type:" . $values->_entity_properties['type'];
+    if (!in_array("type:" . $values->_entity_properties['type'], $query['f'])) {
+      $query['f'][] = "type:" . $values->_entity_properties['type'];
+    }
 
     // Change the link to a facet.
     if ($options['link_as_facet']) {
