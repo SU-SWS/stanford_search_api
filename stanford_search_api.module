@@ -46,12 +46,20 @@ function stanford_search_api_search_block_form($form, $form_state) {
 
   $form['keywords'] = array(
     '#type' => 'textfield',
-    //'#title' => t("Search this site"),
     '#default_value' => isset($_REQUEST['search_api_views_fulltext']) ? check_plain($_REQUEST["search_api_views_fulltext"]) : "",
+    '#attributes' => array(
+      'placeholder' => t('Search this site...'),
+      'class' => array('input-medium search-query'),
+    ),
   );
 
   $form['search'] = array(
-    '#type' => 'submit',
+    '#type' => 'image_button',
+    '#src' => drupal_get_path('theme', 'open_framework') . '/images/searchbutton.png',
+    '#attributes' => array(
+      'class' => array('btn-search'),
+      'alt' => t("Search"),
+    ),
     '#value' => t('Search'),
   );
 
