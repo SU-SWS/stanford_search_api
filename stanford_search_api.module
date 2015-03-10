@@ -41,7 +41,7 @@ function stanford_search_api_block_view($delta = '') {
       break;
 
     case 'search_api_reset_facets_block':
-      $block['subject'] = t('Filter Results');
+      $block['subject'] = "<none>";
       $block['content'] = stanfod_search_api_reset_facets_block();
       break;
 
@@ -157,3 +157,12 @@ function stanford_search_api_views_api() {
   );
 }
 
+/**
+ * Implements hook_preprocess().
+ */
+function stanford_search_api_preprocess_html(&$vars) {
+  $path = current_path();
+  if ($path == "search/content") {
+    $vars['head_title'] = t("Search") . " | " . variable_get("site_name", "");
+  }
+}
