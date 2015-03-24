@@ -9,7 +9,7 @@ Drupal.behaviors.stanford_search_api = {
     // Change the autocomplete search box container role to 'search'
     // ----------------------------------------------------------------
 
-    var input = $("input[role='combobox'].form-autocomplete");
+    var input = $("input[role='combobox'].form-autocomplete", context);
     if (!input.length) {
       return;
     }
@@ -17,6 +17,13 @@ Drupal.behaviors.stanford_search_api = {
     parent.attr("role", "search");
 
     // ----------------------------------------------------------------
+
+    // Set the focus to the first search element if there has been a filter
+    // ----------------------------------------------------------------
+
+    $("#content-body .view-header").attr("tabIndex", 0);
+    $("#content-body .view-header").css("outline", 0);
+    $("#content-body .view-header:first-child").focus();
 
   }
 };
