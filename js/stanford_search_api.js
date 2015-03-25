@@ -9,7 +9,7 @@ Drupal.behaviors.stanford_search_api = {
     // Change the autocomplete search box container role to 'search'
     // ----------------------------------------------------------------
 
-    var input = $("input[role='combobox'].form-autocomplete", context);
+    var input = $("input[role='combobox'].form-autocomplete, .btn-search", context);
     if (!input.length) {
       return;
     }
