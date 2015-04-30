@@ -54,3 +54,27 @@ function stanford_search_api_db_disable() {
 function stanford_search_api_db_uninstall() {
 }
 
+/**
+ * Implements hook_requirements().
+ */
+function stanford_search_api_db_requirements($phase) {
+  $requirements = array();
+
+  // Ensure translations don't break at install time.
+  $t = get_t();
+
+  // Check if the solr module is enabled to ensure no conflicts.
+  if ($phase == "install") {
+    if (module_exists("stanford_search_api_solr")) {
+      $requirements['stanford_search_api_db'] = array(
+        'title' => $t("Stanford Search API conflicting module"),
+        'description' => $t('The Stanford Search API SOLR module is enabled. Please disable before trying to enable the Stanford Search API DB module'),
+        'severity' => REQUIREMENT_ERROR,
+        'value' => $t('stanford_search_api_solr'),
+      );
+    }
+  }
+
+  return $requirements;
+}
+
