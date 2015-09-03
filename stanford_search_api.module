@@ -177,11 +177,14 @@ function stanford_search_api_preprocess_html(&$vars) {
  * Implements hook_form_alter().
  */
 function stanford_search_api_form_alter(&$form, &$form_state, $form_id) {
-
+  
   // Add the aria role "combobox" to any fulltext search box that has autocomplete.
   if (isset($form["search_api_views_fulltext"]) && isset($form["search_api_views_fulltext"]['#autocomplete_path'])) {
     $form["search_api_views_fulltext"]["#attributes"]["role"] = "combobox";
     $form["search_api_views_fulltext"]["#attached"]['js'][] = drupal_get_path("module", "stanford_search_api") . "/js/stanford_search_api.js";
+    if (!empty($form_state['view']->exposed_input)) {
+      $form["search_api_views_fulltext"]["#attached"]['js'][] = drupal_get_path("module", "stanford_search_api") . "/js/stanford_search_api_result.js";
+    }
   }
 
 }
