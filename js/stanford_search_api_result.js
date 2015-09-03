@@ -9,9 +9,9 @@ Drupal.behaviors.stanford_search_api = {
     // Set the focus to the first search element if there has been a filter
     // ----------------------------------------------------------------
 
-    $("#content-body .view-header").attr("tabIndex", 0);
-    $("#content-body .view-header").css("outline", 0);
-    $("#content-body .views-row-first .view-header:first-child").focus();
+    $("#content-body .view-header", context).attr("tabIndex", 0);
+    $("#content-body .view-header", context).css("outline", 0);
+    $("#content-body .views-row-first .view-header:first-child", context).focus();
 
   }
 };
