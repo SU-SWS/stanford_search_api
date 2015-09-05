@@ -182,7 +182,7 @@ function stanford_search_api_form_alter(&$form, &$form_state, $form_id) {
   if (isset($form["search_api_views_fulltext"]) && isset($form["search_api_views_fulltext"]['#autocomplete_path'])) {
     $form["search_api_views_fulltext"]["#attributes"]["role"] = "combobox";
     $form["search_api_views_fulltext"]["#attached"]['js'][] = drupal_get_path("module", "stanford_search_api") . "/js/stanford_search_api.js";
-    if (!empty($form_state['input'])) {
+    if ($form_state['view']->name == 'gotosolr_nodes' && !empty($form_state['input'])) {
       $form["search_api_views_fulltext"]["#attached"]['js'][] = drupal_get_path("module", "stanford_search_api") . "/js/stanford_search_api_result.js";
     }
   }
