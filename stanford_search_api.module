@@ -57,6 +57,8 @@ function stanford_search_api_block_view($delta = '') {
  */
 function stanford_search_api_search_block_form($form, &$form_state) {
 
+  $form["#action"] = url("search/content");
+
   $form['keywords'] = array(
     '#type' => 'textfield',
     '#default_value' => isset($_REQUEST['search_api_views_fulltext']) ? check_plain($_REQUEST["search_api_views_fulltext"]) : "",
