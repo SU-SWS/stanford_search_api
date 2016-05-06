@@ -14,14 +14,6 @@ Sub Modules
 
 Description here:
 
-**[Stanford Search API Acquia](modules/stanford_search_api_acquia)**
-
-Description here:
-
-**[Stanford Search API Elasticsearch](modules/stanford_search_api_elastic)**
-
-Description here:
-
 **[Stanford Search API DB](modules/stanford_search_api_db)**
 
 Description here:
