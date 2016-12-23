@@ -6,7 +6,7 @@ dependencies:
   module:
     - search_api
     - user
-id: stnaford_site_search
+id: stanford_site_search
 label: 'Site Search'
 module: views
 description: ''
