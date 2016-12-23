@@ -1,27 +1,3 @@
-div.search-content ul {
-  margin: 0;
-  padding: 0;
-}
-.content .search-content ul li {
-  list-style-type: none;
-  margin-left: 0;
-  text-indent: 0;
-}
-.search-views-left {
-  display: inline-block;
-  width: 80%;
-  vertical-align: top;
-}
-.search-views-right {
-  display: inline-block;
-  width: 19%;
-  vertical-align: top;
-  text-align: right;
-  margin-top: 1.8em;
-}
-.search-views-bottom {
-  padding-top: .5em;
-}
 .search-excerpt {
   display: block;
 }

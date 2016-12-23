@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Stanford Search API DB Facet Context feature.
- */
-
-include_once 'stanford_search_api_db_facet_context.features.inc';

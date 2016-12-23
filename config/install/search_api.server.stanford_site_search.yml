@@ -1,0 +1,16 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - search_api_db
+id: stanford_site_search
+name: 'Site Search'
+description: 'Search API based site search instead of core search.'
+backend: search_api_db
+backend_config:
+  database: 'default:default'
+  min_chars: 2
+  partial_matches: false
+  autocomplete:
+    suggest_suffix: true
+    suggest_words: true

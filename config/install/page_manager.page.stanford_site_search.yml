@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies: {  }
+id: stanford_site_search
+label: 'Site Search Page'
+description: 'Site Search Page View Override'
+use_admin_theme: false
+path: /search
+access_logic: and
+access_conditions: {  }
+parameters: {  }

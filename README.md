@@ -1,20 +1,10 @@
 #[Stanford Search API](https://github.com/SU-SWS/stanford_search_api)
-##### Version: 7.x-1.x
+##### Version: 8.x-1.x
 
 Maintainers: [jbickar](https://github.com/jbickar), [sherakama](https://github.com/sherakama)
 [Changelog.txt](CHANGELOG.txt)
 
-A configuration module that sets up and configures a base search setup using Search API. Please check out the sub modules for specific configurations.
-
-
-Sub Modules
----
-
-**[Stanford Search API Solr](modules/stanford_search_api_solr)**
-
-Description here:
-
-**[Stanford Search API DB](modules/stanford_search_api_db)**
+A configuration module that sets up and configures a base search setup using Search API.
 
 Description here:
 

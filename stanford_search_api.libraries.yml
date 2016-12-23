@@ -1,0 +1,7 @@
+stanford-search-api:
+  version: 1.x
+  css:
+    theme:
+      css/stanford-search-api.css: {}
+  # js:
+  #   js/stanford-search-api.js: {}
