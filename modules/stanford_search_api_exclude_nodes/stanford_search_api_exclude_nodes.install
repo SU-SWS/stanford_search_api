@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Install and uninstall functions for the stanford search api exclude nodes module.
+ * Install/uninstall functions for the stanford search api exclude nodes module.
  */
 
 /**
@@ -38,10 +38,10 @@ function stanford_search_api_exclude_nodes_install() {
       'type' => 'list_text',
     );
     field_create_field($field);
-    
+
     $instance = array(
       'field_name' => 'field_s_apachesolr_index',
-      'required' => 0, 
+      'required' => 0,
       'label' => 'Apache Solr Index',
       'description' => st('Excludes nodes from Solr Index'),
       'entity_type' => 'node',
