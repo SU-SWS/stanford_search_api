@@ -9,7 +9,16 @@ The Stanford Search API Exclude Nodes module is used to exclude selected nodes f
 
 This will appear as an option in the UI of Search API, in the Data alterations section. Select the checkbox 'Exclude some nodes'.
 
-You will need to add the field field_s_apachesolr_index to the content type you want to be able to exclude nodes of that type.
+Currently if stanford_page is installed it will add the field field_s_apachesolr_index to that content type when enabling the module and hide it in the display.
+
+If you need to add the field field_s_apachesolr_index to other content types you can use add existing field in the manage fields section.
+
+In the event stanford_page is not enabled on the site, you can still add field_s_apachesolr_index manually as a select list with the following values:
+
+```
+0|Index
+1|Do Not Index
+```
 
 You can then choose 'Do Not Index' from the select dropdown.
 

@@ -1,0 +1,70 @@
+<?php
+
+/**
+ * @file
+ * Install/uninstall functions for the stanford search api exclude nodes module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function stanford_search_api_exclude_nodes_install() {
+  $field_info = field_info_field('field_s_apachesolr_index');
+  if (module_exists('stanford_page') && empty($field_info)) {
+    $field = array(
+      'field_name' => 'field_s_apachesolr_index',
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_s_apachesolr_index',
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'widget' => array(
+        'type' => 'select',
+      ),
+      'locked' => 0,
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Index',
+          1 => 'Do Not Index',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => 0,
+      'type' => 'list_text',
+    );
+    field_create_field($field);
+
+    $instance = array(
+      'field_name' => 'field_s_apachesolr_index',
+      'required' => 0,
+      'label' => 'Apache Solr Index',
+      'description' => st('Excludes nodes from Solr Index'),
+      'entity_type' => 'node',
+      'bundle' => 'stanford_page',
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+          'type' => 'hidden',
+        ),
+      ),
+    );
+    field_create_instance($instance);
+  }
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function stanford_search_api_exclude_nodes_uninstall() {
+  $field = field_info_field('field_s_apachesolr_index');
+  if (!empty($field)) {
+    field_delete_field('field_s_apachesolr_index');
+    field_purge_batch(0);
+  }
+}
