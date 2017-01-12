@@ -9,7 +9,8 @@
  * Implements hook_install().
  */
 function stanford_search_api_exclude_nodes_install() {
-  if (module_exists('stanford_page')) {
+  $field_info = field_info_field('field_s_apachesolr_index');
+  if (module_exists('stanford_page') && empty($field_info)) {
     $field = array(
       'field_name' => 'field_s_apachesolr_index',
       'active' => 1,
@@ -64,6 +65,6 @@ function stanford_search_api_exclude_nodes_uninstall() {
   $field = field_info_field('field_s_apachesolr_index');
   if (!empty($field)) {
     field_delete_field('field_s_apachesolr_index');
-    field_purge_batch(1);
+    field_purge_batch(0);
   }
 }
