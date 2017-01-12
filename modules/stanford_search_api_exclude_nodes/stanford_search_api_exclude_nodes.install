@@ -1,33 +1,41 @@
 <?php
 
-function stanford_search_api_exclude_nodes_enable() {
+/**
+ * @file
+ * Install and uninstall functions for the stanford search api exclude nodes module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function stanford_search_api_exclude_nodes_install() {
   if (module_exists('stanford_page')) {
     $field = array(
       'field_name' => 'field_s_apachesolr_index',
-       'active' => 1,
-       'cardinality' => 1,
-       'deleted' => 0,
-       'entity_types' => array(),
-       'field_name' => 'field_s_apachesolr_index',
-       'indexes' => array(
-         'value' => array(
-           0 => 'value',
-         ),
-       ),
-       'widget' => array(
+      'active' => 1,
+      'cardinality' => 1,
+      'deleted' => 0,
+      'entity_types' => array(),
+      'field_name' => 'field_s_apachesolr_index',
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'widget' => array(
         'type' => 'select',
-       ),
-       'locked' => 0,
-       'module' => 'list',
-       'settings' => array(
-         'allowed_values' => array(
-           0 => 'Index',
-           1 => 'Do Not Index',
-         ),
-         'allowed_values_function' => '',
-       ),
-       'translatable' => 0,
-       'type' => 'list_text',
+      ),
+      'locked' => 0,
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => 'Index',
+          1 => 'Do Not Index',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => 0,
+      'type' => 'list_text',
     );
     field_create_field($field);
     
@@ -49,9 +57,13 @@ function stanford_search_api_exclude_nodes_enable() {
   }
 }
 
+/**
+ * Implements hook_uninstall().
+ */
 function stanford_search_api_exclude_nodes_uninstall() {
   $field = field_info_field('field_s_apachesolr_index');
   if (!empty($field)) {
     field_delete_field('field_s_apachesolr_index');
+    field_purge_batch(1);
   }
 }

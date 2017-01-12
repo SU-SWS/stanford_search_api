@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * @file
+ * Contains class used for excluding entity.
+ */
+
 /**
  * SearchApiExcludeSomeNodes provides mechanism for not indexing nodes.
  */
