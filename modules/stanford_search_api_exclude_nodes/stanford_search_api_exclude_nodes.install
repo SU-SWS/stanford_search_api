@@ -46,7 +46,7 @@ function stanford_search_api_exclude_nodes_install() {
       'description' => st('Excludes nodes from Solr Index'),
       'entity_type' => 'node',
       'bundle' => 'stanford_page',
-      'display' => array( 
+      'display' => array(
         'default' => array(
           'label' => 'hidden',
           'type' => 'hidden',

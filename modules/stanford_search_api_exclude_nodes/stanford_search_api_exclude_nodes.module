@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Allows user with proper privileges to exclude nodes when submitting index to search api.
+ * Allows user to exclude nodes when submitting index to search api.
  */
 
 require_once 'includes/SearchApiExcludeSomeNodes.php';
