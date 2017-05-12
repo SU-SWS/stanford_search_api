@@ -47,6 +47,22 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
+datasource_settings:
+  'entity:node':
+    plugin_id: 'entity:node'
+    settings:
+      bundles:
+        default: true
+        selected: {  }
+      languages:
+        default: true
+        selected: {  }
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
 processor_settings:
   add_url:
     plugin_id: add_url
@@ -70,6 +86,13 @@ processor_settings:
       suffix: '</strong>'
       weights:
         postprocess_query: 0
+    prefix: '<strong>'
+    suffix: '</strong>'
+    excerpt: true
+    excerpt_length: 256
+    highlight: always
+    highlight_partial: false
+    exclude_fields: {  }
   html_filter:
     plugin_id: html_filter
     settings:
@@ -87,6 +110,16 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+      em: 1.5
+      u: 1.5
   ignorecase:
     plugin_id: ignorecase
     settings:
@@ -110,6 +143,9 @@ processor_settings:
       weights:
         preprocess_index: -6
         preprocess_query: -6
+    spaces: ''
+    overlap_cjk: true
+    minimum_word_size: 3
   transliteration:
     plugin_id: transliteration
     settings:
@@ -119,21 +155,11 @@ processor_settings:
       weights:
         preprocess_index: -10
         preprocess_query: -10
-options:
-  index_directly: false
-  cron_limit: 50
-datasource_settings:
-  'entity:node':
-    plugin_id: 'entity:node'
-    settings:
-      bundles:
-        default: true
-        selected: {  }
-      languages:
-        default: true
-        selected: {  }
 tracker_settings:
   default:
     plugin_id: default
     settings: {  }
+options:
+  index_directly: false
+  cron_limit: 50
 server: stanford_site_search
