@@ -66,6 +66,7 @@ function stanford_search_api_search_block_form($form, &$form_state) {
       'placeholder' => t('Search this site...'),
       'class' => array('input-medium search-query'),
       'aria-label' => t('Search'),
+      'label' => t('search'),
     ),
     '#attached' => array(
       'js' => array(
